@@ -15,16 +15,16 @@ export default function Home() {
     <Navbar />
 
     <section className="main-section">
-      <div className="page-eading">
+      <div className="page-heading">
         <h1>Track Your Application & Resume Rating</h1>
         <h2>Review your submissions and check your AI-powerd feedback.</h2>
       </div>
     </section>
 
-    {resumes.length > 0 && (
-      <div>
+    {Array.isArray(resumes) && resumes.length > 0 && (
+      <div className="resumes-section">
         {resumes.map((resume: Resume) => (
-          <ResumeCard key={resume.id} resume={resume}  />
+          <ResumeCard key={resume.id} resume={resume} />
       ))}
       </div>
     )}
